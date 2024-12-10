@@ -64,13 +64,6 @@
 			);
 			target = F5E787282D08509D00C9A1CC /* FlexiJSONCoder */;
 		};
-		F5E787752D08564E00C9A1CC /* Exceptions for "Test" folder in "Test" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = F5E787632D08564C00C9A1CC /* Test */;
-		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -80,14 +73,6 @@
 				F5E7872E2D08509D00C9A1CC /* Exceptions for "FlexiJSONCoder" folder in "FlexiJSONCoder" target */,
 			);
 			path = FlexiJSONCoder;
-			sourceTree = "<group>";
-		};
-		F5E787652D08564C00C9A1CC /* Test */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				F5E787752D08564E00C9A1CC /* Exceptions for "Test" folder in "Test" target */,
-			);
-			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -115,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				F5E7872B2D08509D00C9A1CC /* FlexiJSONCoder */,
-				F5E787652D08564C00C9A1CC /* Test */,
 				F5E787792D08568B00C9A1CC /* Frameworks */,
 				F5E7872A2D08509D00C9A1CC /* Products */,
 			);
@@ -187,9 +171,6 @@
 			dependencies = (
 				F5E7877D2D08568B00C9A1CC /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				F5E787652D08564C00C9A1CC /* Test */,
-			);
 			name = Test;
 			packageProductDependencies = (
 			);
@@ -228,6 +209,8 @@
 			);
 			mainGroup = F5E7871F2D08509D00C9A1CC;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
