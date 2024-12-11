@@ -1,7 +1,7 @@
 ![Static Badge](https://img.shields.io/badge/Platform-iOS-blue)
 ![Static Badge](https://img.shields.io/badge/iOS-13.0%2B-orange)
 ![Static Badge](https://img.shields.io/badge/SwiftPM-Compatible-green)
-![Static Badge](https://img.shields.io/badge/pod-v0.0.6-blue)
+![Static Badge](https://img.shields.io/badge/pod-v0.0.1-blue)
 ![Static Badge](https://img.shields.io/badge/Licence-MIT-black)
 ![Static Badge](https://img.shields.io/badge/OpenSource-red)
 ![Static Badge](https://img.shields.io/badge/Swift%20Tests-passing-green?logo=github&link=image)
@@ -14,19 +14,17 @@
 This library is especially useful when dealing with API responses that may contain multiple types for a single field (e.g., `String`, `Int`, `Float`, `Double`, etc.), making it easier to work with inconsistent data structures.
 
 
-> [!IMPORTANT]
-> The current version is still in development. There may be breaking changes in version updates until version 1.0.
-
 ## Features:
 
-- **Type Coercion with Fallback**: Automatically convert `String`, `Int`, `Float`, `Double`, and `Bool` types to your model's expected type.
-- **Flexible Data Handling**: Coerce data from different types (e.g., `"true"` string to `Bool`, `"1"` string to `Int`, etc.).
-- **Error Handling**: Throws clear errors if the type conversion fails, ensuring data integrity.
-- **Easy Integration**: Seamless integration with your existing Swift codebase using the standard `Decodable` protocol.
-- **Customizable for Future Types**: Easily extendable to support other types like `Date`, `URL`, etc.
+- **Default Value Handling**: Automatically applies default values for any missing keys or values in the JSON.
+- **Type Coercion**: Converts incoming data types (e.g., String, Int, Float, Double, Bool) to the model's expected type seamlessly.
+- **Null Value Management**: Replaces null values with predefined default values, ensuring smooth processing.
+- **Data Integrity**: Generates clear and actionable errors for unsupported type conversions while maintaining data consistency.
+- **Easy Integration**: Compatible with your existing Swift codebase and leverages the Decodable protocol.
+- **Customizable**: Supports extensions for additional data types, such as Date, URL, and more, for future-proof development
 
 ## Supported Datatypes :
-**Version 0.0.6**: This release with support for `String`, `Int`, `Float`, `Double`, and `Bool` coercion.
+**Version 0.0.1**: This release with support for `String`, `Int`, `Float`, `Double`, and `Bool` coercion.
 
 ## Installation
 
@@ -52,7 +50,7 @@ https://github.com/Forgwhiz/FlexiJSONCodable.git
 Add the following line to your `Podfile`:
 
 ```ruby
-pod 'FlexiJSONCodable', '~> 0.0.6'
+pod 'FlexiJSONCodable', '~> 0.0.1'
 ```
 
 Then run:
@@ -75,27 +73,29 @@ pod update
 Usage of the library is simple and can be seen in the example provided below. Here's how to use **FlexiJSONCodable** in your Swift model:
 
 ```swift
-struct WelcomeModel: FlexiJSONCodable {
+
+import FlexiJSONCoder
+
+struct WelcomeModel: Codable {
     let id: String?
     let title: String
     let type: Int?
     let category: Float?
-    let isActive: Bool?
 }
 
 let jsonData = """
 {
     "id": "123",
     "title": "Welcome",
-    "type": "1",
     "category": "45.67",
     "isActive": "true",
 }
 """.data(using: .utf8)!
 
 do {
-    let decodedModel = try JSONDecoder().decode(WelcomeModel.self, from: jsonData)
-    print(decodedModel)  // Outputs: WelcomeModel(id: "123", title: "Welcome", type: 1, category: 45.67, isActive: true)
+    let jsonData = try JSONSerialization.data(withJSONObject: dictionary, options: [.fragmentsAllowed])
+    let decodedModel = try FlexiJsonDecoder().decode(WelcomeModel.self, from: jsonData)
+    print(decodedModel)  // Outputs: WelcomeModel(id: "123", title: "Welcome", type: 0, category: 45.67, isActive: true)
 } catch {
     print("Decoding failed: \(error)")
 }
@@ -118,7 +118,7 @@ While the basic functionality works out of the box for `String`, `Int`, `Float`,
 
 ### Customizing for Future Types
 
-You can extend the library to support additional types (like `Date`, `URL`, etc.) by adding new `decodeWithFallback` functions for each type.
+You can extend the library to support additional types (like `Date`, `URL`, etc.)
 
 ## License
 
