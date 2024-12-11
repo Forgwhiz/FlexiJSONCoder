@@ -7,9 +7,9 @@
 ![Static Badge](https://img.shields.io/badge/Swift%20Tests-passing-green?logo=github&link=image)
 
 
-# FlexiJSONCodable for Swift
+# FlexiJSONCoder for Swift
 
-**FlexiJSONCodable** is a lightweight, flexible, and easy-to-use library for decoding JSON data into Swift types, providing **type coercion** with fallback support. It allows you to seamlessly handle different data types coming from a JSON response and automatically convert them to the expected types in your model. 
+**FlexiJSONCoder** is a lightweight, flexible, and easy-to-use library for decoding JSON data into Swift types, providing **type coercion** with fallback support. It allows you to seamlessly handle different data types coming from a JSON response and automatically convert them to the expected types in your model. 
 
 This library is especially useful when dealing with API responses that may contain multiple types for a single field (e.g., `String`, `Int`, `Float`, `Double`, etc.), making it easier to work with inconsistent data structures.
 
@@ -28,7 +28,7 @@ This library is especially useful when dealing with API responses that may conta
 
 ## Installation
 
-FlexiJSONCodable is available through [Swift Package Manager](https://swiftpackageindex.com/Forgwhiz/FlexiJSONCodable)
+FlexiJSONCoder is available through [Swift Package Manager](https://swiftpackageindex.com/Forgwhiz/FlexiJSONCoder)
 
 ## Features <a id='ssFeatures'></a>
 
@@ -42,7 +42,7 @@ File > Swift Packages > Add Package Dependency...
 - Then paste this URL:
 
 ```ruby
-https://github.com/Forgwhiz/FlexiJSONCodable.git
+https://github.com/Forgwhiz/FlexiJSONCoder.git
 ```
 
 ### Cocoapods
@@ -50,7 +50,7 @@ https://github.com/Forgwhiz/FlexiJSONCodable.git
 Add the following line to your `Podfile`:
 
 ```ruby
-pod 'FlexiJSONCodable', '~> 0.0.1'
+pod 'FlexiJSONCoder', '~> 0.0.1'
 ```
 
 Then run:
@@ -70,7 +70,7 @@ pod update
 
 ### Basic Usage
 
-Usage of the library is simple and can be seen in the example provided below. Here's how to use **FlexiJSONCodable** in your Swift model:
+Usage of the library is simple and can be seen in the example provided below. Here's how to use **FlexiJSONCoder** in your Swift model:
 
 ```swift
 
@@ -103,7 +103,7 @@ do {
 
 ### Options for Custom Types
 
-While the basic functionality works out of the box for `String`, `Int`, `Float`, `Double`, and `Bool`, you can extend the functionality in the future as needed. **FlexiJSONCodable** is built with extensibility in mind.
+While the basic functionality works out of the box for `String`, `Int`, `Float`, `Double`, and `Bool`, you can extend the functionality in the future as needed. **FlexiJSONCoder** is built with extensibility in mind.
 
 ### Supported Types
 
@@ -122,6 +122,6 @@ You can extend the library to support additional types (like `Date`, `URL`, etc.
 
 ## License
 
-**FlexiJSONCodable** is available under the MIT license. See the [LICENSE](LICENSE) file for more information.
+**FlexiJSONCoder** is available under the MIT license. See the [LICENSE](LICENSE) file for more information.
 
 ---
