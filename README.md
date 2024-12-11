@@ -26,6 +26,10 @@ This library is especially useful when dealing with API responses that may conta
 ## Supported Datatypes :
 **Version 0.0.1**: This release with support for `String`, `Int`, `Float`, `Double`, and `Bool` coercion.
 
+## Example
+
+[Download the example project](https://github.com/Forgwhiz/DecoderExample)
+
 ## Installation
 
 FlexiJSONCoder is available through [Swift Package Manager](https://swiftpackageindex.com/Forgwhiz/FlexiJSONCoder)
@@ -94,7 +98,7 @@ let jsonData = """
 
 do {
     let jsonData = try JSONSerialization.data(withJSONObject: dictionary, options: [.fragmentsAllowed])
-    let decodedModel = try FlexiJsonDecoder().decode(WelcomeModel.self, from: jsonData)
+    let decodedModel = try FlexiJSONCoder().decode(WelcomeModel.self, from: jsonData)
     print(decodedModel)  // Outputs: WelcomeModel(id: "123", title: "Welcome", type: 0, category: 45.67, isActive: true)
 } catch {
     print("Decoding failed: \(error)")
